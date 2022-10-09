@@ -20,6 +20,7 @@ a.link {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100px;
 }
 
 .logo__pic {
@@ -65,11 +66,14 @@ a.link {
   display: flex;
   padding: 0 50px;
   align-items: end;
-  width: 100%;
   justify-content: center;
 }
 
-
+@media only screen and (max-width: 760px) {
+  .coffee-page__mission {
+    align-items: center;
+  }
+}
 
 /* locations */
 
@@ -86,7 +90,33 @@ a.link {
 }
 
 .location__map img {
-  width: 200px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.location__map:hover img {
+  opacity: 0.4;
+}
+
+.location__name {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 760px) {
+  .coffee-page__locations {
+    flex-direction: column;
+  }
+  .coffee-page__location {
+    margin-bottom: 15px;
+  }
+  .location__map img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0;
+  }
 }
 
 /* team */
@@ -96,20 +126,40 @@ a.link {
   justify-content: center;
 }  
 
-.team__person {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-}
-
 .team__person:not(:last-child) {
   margin-right: 12px;
 }
 
+.person__pic {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+@media only screen and (max-width: 760px) {
+  .coffee-page__team {
+    flex-direction: column;
+  }
+  .person__pic {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .team__person:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+/* footer */
+
 footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  height: 50px;
+
 }
 
 .footer__copyright {
@@ -118,11 +168,12 @@ footer {
 
 .footer__links {
   display: flex;
-  height: 40px;
+  align-items: center;
+  height: 50px;
 }
 
 .link__icon img {
-height: 20px;
+  height: 20px;
 }
 
 .link__icon:not(:last-child) {
